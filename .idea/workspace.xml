@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a4a0c592-256b-4de3-8422-4b67fca15efa" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MovieCollectionIn-ClassProject.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Cereal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CerealCollection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CerealCollectionRunner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Movie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MovieCollection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MovieCollectionRunner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/cereal.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/movies_data.csv" afterDir="false" />
-    </list>
+    <list default="true" id="a4a0c592-256b-4de3-8422-4b67fca15efa" name="Changes" comment="fiudjd" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,6 +61,14 @@
       <option name="presentableId" value="Default" />
       <updated>1675873991444</updated>
     </task>
+    <task id="LOCAL-00001" summary="fiudjd">
+      <created>1675877704071</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1675877704071</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -88,5 +81,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fiudjd" />
+    <option name="LAST_COMMIT_MESSAGE" value="fiudjd" />
   </component>
 </project>
