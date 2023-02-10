@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-
 public class MovieCollectionRunner {
   public static void main(String[] args) {
     /* TASK 1: finish the code for the importMovieList helper method
