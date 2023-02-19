@@ -291,10 +291,11 @@ public class MovieCollection {
     // arraylist to hold search results
     ArrayList<String> results = new ArrayList<String>();
 
-    // search through ALL movies in collection
+    // search through ALL actors in collection
     for (int i = 0; i < actors.size(); i++) {
       String actor = actors.get(i);
       if (actor.toLowerCase().indexOf(searchTerm) != -1) {
+        //Tracker variable to see if the actor is already in the list
         boolean inList = false;
         for (int j = 0; j < results.size(); j++) {
           if (results.get(j).equals(actor)) {
@@ -412,30 +413,38 @@ public class MovieCollection {
     ArrayList<Movie> sortedMovies = movies;
     sortResults(sortedMovies);
 
+    //Sort movies by rating from low to high
     for (int i = 1; i < sortedMovies.size(); i++){
       Movie tempMovie = sortedMovies.get(i);
       Double tempRating = sortedMovies.get(i).getUserRating();
       int possibleIndex = i;
-      while (possibleIndex > 0 && tempRating < sortedMovies.get(i - 1).getUserRating()) {
+      while (possibleIndex > 0 && tempRating < sortedMovies.get(possibleIndex - 1).getUserRating()) {
         sortedMovies.set(possibleIndex, sortedMovies.get(possibleIndex - 1));
         possibleIndex--;
       }
       sortedMovies.set(possibleIndex, tempMovie);
     }
 
+    //Takes the top 50 ratings
+    Movie[] fiftyMovies = new Movie[50];
+    int idx = sortedMovies.size() - 1;
+    for (int i = 0; i < fiftyMovies.length; i++){
+      fiftyMovies[i] = sortedMovies.get(idx);
+      idx --;
+    }
+
     int choiceNum = 1;
-    for (int i = sortedMovies.size() - 1 ; i < sortedMovies.size() - 50; i++){
-      String title = sortedMovies.get(i).getTitle();
-      Double rating = sortedMovies.get(i).getUserRating();
-      System.out.println(choiceNum + ". " + title + ": " + rating);
+    for (int i = 0; i < fiftyMovies.length; i++){
+      System.out.println( choiceNum + ". " + fiftyMovies[i].getTitle() + ": " + fiftyMovies[i].getUserRating());
       choiceNum++;
     }
+
 
     System.out.println("Which movie would you like to learn more about?");
     System.out.print("Enter number: ");
     int choice = scanner.nextInt();
     scanner.nextLine();
-    Movie selectedMovie = sortedMovies.get(sortedMovies.size() - choice - 1);
+    Movie selectedMovie = fiftyMovies[choice - 1];
     displayMovieInfo(selectedMovie);
 
     System.out.println("\n ** Press Enter to Return to Main Menu **");
@@ -443,7 +452,45 @@ public class MovieCollection {
   }
   
   private void listHighestRevenue() {
+    ArrayList<Movie> sortedMovies = movies;
+    sortResults(sortedMovies);
 
+    //Sort movies by rating from low to high
+    for (int i = 1; i < sortedMovies.size(); i++){
+      Movie tempMovie = sortedMovies.get(i);
+      int tempRevenue = sortedMovies.get(i).getRevenue();
+      int possibleIndex = i;
+      while (possibleIndex > 0 && tempRevenue < sortedMovies.get(possibleIndex - 1).getRevenue()) {
+        sortedMovies.set(possibleIndex, sortedMovies.get(possibleIndex - 1));
+        possibleIndex--;
+      }
+      sortedMovies.set(possibleIndex, tempMovie);
+    }
+
+    //Takes the top 50 ratings
+    Movie[] fiftyMovies = new Movie[50];
+    int idx = sortedMovies.size() - 1;
+    for (int i = 0; i < fiftyMovies.length; i++){
+      fiftyMovies[i] = sortedMovies.get(idx);
+      idx --;
+    }
+
+    int choiceNum = 1;
+    for (int i = 0; i < fiftyMovies.length; i++){
+      System.out.println( choiceNum + ". " + fiftyMovies[i].getTitle() + ": " + fiftyMovies[i].getRevenue());
+      choiceNum++;
+    }
+
+
+    System.out.println("Which movie would you like to learn more about?");
+    System.out.print("Enter number: ");
+    int choice = scanner.nextInt();
+    scanner.nextLine();
+    Movie selectedMovie = fiftyMovies[choice - 1];
+    displayMovieInfo(selectedMovie);
+
+    System.out.println("\n ** Press Enter to Return to Main Menu **");
+    scanner.nextLine();
 
   }
 }
